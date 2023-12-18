@@ -91,38 +91,39 @@
     </div>
 </section>
 
-
-
 <script>
     function login() {
-    console.log("HELLO");
-    var loginElement = document.getElementById('login');
-    var registerElement = document.getElementById('register');
-  
-    if (loginElement && registerElement) {
-      loginElement.style.display = 'block';
-      registerElement.style.display = 'none';
-    } else {
-      console.error("Elements with IDs 'login' and 'register' not found.");
+        console.log("HELLO");
+        var loginElement = document.getElementById('login');
+        var registerElement = document.getElementById('register');
+      
+        if (loginElement && registerElement) {
+          loginElement.style.display = 'block';
+          registerElement.style.display = 'none';
+        } else {
+          console.error("Elements with IDs 'login' and 'register' not found.");
+        }
     }
-  }
-  
-  
-  function register() {
-    console.log("HELLO");
-    var loginElement = document.getElementById('login');
-    var registerElement = document.getElementById('register');
-  
-    if (loginElement && registerElement) {
-      loginElement.style.display = 'none';
-      registerElement.style.display = 'block';
-    } else {
-      console.error("Elements with IDs 'login' and 'register' not found.");
+      
+      
+    function register() {
+        console.log("HELLO");
+        var loginElement = document.getElementById('login');
+        var registerElement = document.getElementById('register');
+      
+        if (loginElement && registerElement) {
+          loginElement.style.display = 'none';
+          registerElement.style.display = 'block';
+        } else {
+          console.error("Elements with IDs 'login' and 'register' not found.");
+        }
     }
-  }
-  
-  
+      
 </script>
+
+
+
+
 
 
 
