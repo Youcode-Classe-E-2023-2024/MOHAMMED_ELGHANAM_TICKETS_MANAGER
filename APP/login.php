@@ -46,7 +46,7 @@
     <div class="max-w-md mx-auto  flex justify-center">
         <h2 class="font-bold text-3xl text-white mb-6">register</h2>
     </div>
-    <div class="max-w-md mx-auto border border-sky-500 rounded-md overflow-hidden shadow-md bg-gray-800 ">
+    <div class="max-w-md mx-auto  rounded-md overflow-hidden shadow-md bg-gray-800 ">
         
         <form class="px-6 py-4" action="#" method="post">
             <!-- Name Input -->
@@ -90,38 +90,38 @@
         </form>
     </div>
 </section>
-<script  >
 
-function login() {
-  console.log("HELLO");
-  var loginElement = document.getElementById('login');
-  var registerElement = document.getElementById('register');
 
-  if (loginElement && registerElement) {
-    loginElement.style.display = 'block';
-    registerElement.style.display = 'none';
-  } else {
-    console.error("Elements with IDs 'login' and 'register' not found.");
+
+<script>
+    function login() {
+    console.log("HELLO");
+    var loginElement = document.getElementById('login');
+    var registerElement = document.getElementById('register');
+  
+    if (loginElement && registerElement) {
+      loginElement.style.display = 'block';
+      registerElement.style.display = 'none';
+    } else {
+      console.error("Elements with IDs 'login' and 'register' not found.");
+    }
   }
-}
-
-
-function register() {
-  console.log("HELLO");
-  var loginElement = document.getElementById('login');
-  var registerElement = document.getElementById('register');
-
-  if (loginElement && registerElement) {
-    loginElement.style.display = 'none';
-    registerElement.style.display = 'block';
-  } else {
-    console.error("Elements with IDs 'login' and 'register' not found.");
+  
+  
+  function register() {
+    console.log("HELLO");
+    var loginElement = document.getElementById('login');
+    var registerElement = document.getElementById('register');
+  
+    if (loginElement && registerElement) {
+      loginElement.style.display = 'none';
+      registerElement.style.display = 'block';
+    } else {
+      console.error("Elements with IDs 'login' and 'register' not found.");
+    }
   }
-}
-
-
-
-
+  
+  
 </script>
 
 
