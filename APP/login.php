@@ -2,7 +2,7 @@
     include 'header.php';
 ?>
 <!-- ------------------------------------------------------------------------------------------ -->
-<section class="bg-gray-50 dark:bg-gray-900">
+<section style="display:block;" class="bg-gray-50 dark:bg-gray-900" id="login">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 gap-3">
         <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white ">
             Sign in 
@@ -42,7 +42,7 @@
 <!-- ------------------------------------------------------------------------------------------------------------------- -->
 
 
-<section style="display:none;" class="bg-gray-50 dark:bg-gray-900">
+<section style="display:none;" class="bg-gray-50 dark:bg-gray-900" id="register">
     <div class="max-w-md mx-auto  flex justify-center">
         <h2 class="font-bold text-3xl text-white mb-6">register</h2>
     </div>
@@ -90,6 +90,7 @@
         </form>
     </div>
 </section>
+<script src="../js/script.js" ></script>
 
 
 
