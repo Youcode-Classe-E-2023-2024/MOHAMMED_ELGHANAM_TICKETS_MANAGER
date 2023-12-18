@@ -2,7 +2,7 @@
     include 'header.php';
 ?>
 <!-- ------------------------------------------------------------------------------------------ -->
-<section style="display:block;" class="bg-gray-50 dark:bg-gray-900" id="login">
+<section style="display:block;"  class="bg-gray-50 dark:bg-gray-900" id="login">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 gap-3">
         <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white ">
             Sign in 
@@ -32,7 +32,7 @@
                   </div>
                   <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Sign in</button>
                   <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                      Don’t have an account yet? <a href="register.php" class="font-medium hover:underline text-blue-600">Sign up</a>
+                      Don’t have an account yet? <a href="" onclick="register()" class="font-medium hover:underline text-blue-600">Sign up</a>
                   </p>
               </form>
           </div>
@@ -86,11 +86,43 @@
                 class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
                 Register
             </button>
-            <a href="add_ticket.php">ticket</a>
+            <a href="" onclick="login()">ticket</a>
         </form>
     </div>
 </section>
-<script src="../js/script.js" ></script>
+<script  >
+
+function login() {
+  console.log("HELLO");
+  var loginElement = document.getElementById('login');
+  var registerElement = document.getElementById('register');
+
+  if (loginElement && registerElement) {
+    loginElement.style.display = 'block';
+    registerElement.style.display = 'none';
+  } else {
+    console.error("Elements with IDs 'login' and 'register' not found.");
+  }
+}
+
+
+function register() {
+  console.log("HELLO");
+  var loginElement = document.getElementById('login');
+  var registerElement = document.getElementById('register');
+
+  if (loginElement && registerElement) {
+    loginElement.style.display = 'none';
+    registerElement.style.display = 'block';
+  } else {
+    console.error("Elements with IDs 'login' and 'register' not found.");
+  }
+}
+
+
+
+
+</script>
 
 
 
