@@ -42,7 +42,7 @@
                    
                     <div class="w-[100%] h-15  flex justify-between items-center">
 
-                        <a class="bg-sky-900 hover:bg-sky-950 rounded-lg flex justify-center items-center w-36 h-10 text-white shadow-md shadow-gray-700 ">
+                        <a href="creat_ticket.php" class="bg-sky-900 hover:bg-sky-950 rounded-lg flex justify-center items-center w-36 h-10 text-white shadow-md shadow-gray-700 ">
                             creat ticket
                         </a> 
                         <div class=" w-2/5 h-fit flex gap-2">
@@ -62,7 +62,7 @@
                     </div>
                     
                     <div class="w-[100%] h-[77%] py-3 overflow-auto">
-
+                        <a href="details_ticket.php">
                         <table class="min-w-full bg-gray-800  border-gray-300 rounded-xl shadow-lg shadow-gray-700">
                             <thead>
                                 <tr>
@@ -116,6 +116,7 @@
                                 <!-- Add more rows as needed -->
                             </tbody>
                         </table>
+                        </a>
                         <!-- <div class="w-[100%] h-20  rounded-md  flex justify-between items-center px-3  shadow-sm shadow-blue-200 my-1 bg-green-600"></div> -->
 
                     </div>
