@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Ticket Form</title>
-    <!-- Include the Tailwind CSS CDN (you can also download and host it locally) -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-900 p-8">
+<?php
+    include 'header.php';
+?>
 <div class="max-w-md mx-auto">
     <h2 class="text-2xl text-center text-white font-bold mb-4">Add Ticket</h2>
 </div>
@@ -64,5 +57,4 @@
     </form>
 </div>
 
-</body>
-</html>
+

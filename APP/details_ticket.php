@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>Document</title>
-</head>
-
-<body class="bg-gray-800"> 
+<?php
+    include 'header.php';
+?>
     <section class="w-full h-screen flex-col justify-center items-center  bg-gray-800 px-5 py-6 overflow-auto">
         <!-- title -->
             <div class="w-full h-12 bg-red-900 rounded-xl flex gap-3 items-center border border-gray-400">
@@ -90,6 +82,3 @@
             </div>
         </div>
     </section>
-</body>
-
-</html>
