@@ -42,10 +42,10 @@
 <!-- ------------------------------------------------------------------------------------------------------------------- -->
 
 
-
-<div class="max-w-md mx-auto  flex justify-center">
+<section style="display:none;" class="bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-md mx-auto  flex justify-center">
         <h2 class="font-bold text-3xl text-white mb-6">register</h2>
-   </div>
+    </div>
     <div class="max-w-md mx-auto border border-sky-500 rounded-md overflow-hidden shadow-md bg-gray-800 ">
         
         <form class="px-6 py-4" action="#" method="post">
@@ -89,7 +89,7 @@
             <a href="add_ticket.php">ticket</a>
         </form>
     </div>
-
+</section>
 
 
 
