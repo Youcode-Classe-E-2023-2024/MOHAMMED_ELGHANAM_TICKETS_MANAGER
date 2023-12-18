@@ -3,8 +3,8 @@
 ?>
     <section class="w-full h-screen flex-col justify-center items-center  bg-gray-800 px-5 py-6 overflow-auto">
         <!-- title -->
-            <div class="w-full h-12 bg-red-900 rounded-xl flex gap-3 items-center border border-gray-400">
-                <div class="w-3 h-12 bg-blue-700 rounded-l-xl"></div>
+            <div class="w-full h-12 bg--gray-600 rounded-xl flex gap-3 items-center border border-gray-400">
+                <div class="w-3 h-12 bg-sky-950 rounded-l-xl"></div>
                 <h1 class="text-4xl font-bold text-white uppercase">mazerati</h1>
             </div> 
         <!-- fin title -->
@@ -48,11 +48,11 @@
             <!-- fin parti assigment -->
 
         </div>
-
+<!-- Parti commenter -->
         <div class="w-3/5 h-1/2 mt-5 rounded-xl p-3 flex-col border-2 border-gray-400">
             <div class="w-full h-4/5 overflow-auto p-3 flex-col">
 
-                <div class="w-full h-auto bg-red-900 flex  rounded-lg p-2 gap-3">
+                <div class="w-full h-auto bg-sky-950 flex  rounded-lg p-2 gap-3">
                     <img src="med.jpg" alt="" class="w-12 h-12 bg-blue-700 rounded-full ">
                     <div class="w-10/12 h-auto">
                         <h5 class="text-white font-semibold pl-1">MOHAMMED ELGHANAM</h5>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
 
-                <div class="w-full h-auto bg-red-900 flex  rounded-lg p-2 gap-3 mt-2">
+                <div class="w-full h-auto bg-sky-950 flex  rounded-lg p-2 gap-3 mt-2">
                     <img src="med.jpg" alt="" class="w-12 h-12 bg-blue-700 rounded-full ">
                     <div class="w-10/12 h-auto">
                         <h5 class="text-white font-semibold pl-1">MOHAMMED ELGHANAM</h5>
@@ -75,10 +75,11 @@
                 </div>
 
             </div>
-            <div class="w-full h-12 bg-red-900 flex justify-between  rounded-lg p-2 mt-3">
+            <div class="w-full h-12 bg-sky-800 flex justify-between  rounded-lg p-2 mt-3">
                 <h4 class="text-gray-300">Comment ...</h4>
                 <button class="w-20 h-9 rounded-xl bg-black text-white text-lg hover:bg-blue-900">send</button>
                 
             </div>
         </div>
+        <!-- fin parti comment -->
     </section>
