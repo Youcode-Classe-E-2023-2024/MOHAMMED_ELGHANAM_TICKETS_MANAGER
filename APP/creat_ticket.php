@@ -16,13 +16,11 @@ $db = new database();
 <body class="w-screen h-full flex flex-col justify-center items-center gap-2 overflow-x-hidden bg-gray-800 p-2">
 
 
-<div class="max-w-md mx-auto">
-    <h2 class="text-2xl text-center text-white font-bold mb-4">Add Ticket</h2>
-</div>
-<div class="max-w-md mx-auto bg-gray-800 p-8 rounded shadow-md">
-    
 
-    <form action="/submit-ticket" method="post">
+<div class="w-1/3 mx-auto bg-gray-800 p-8 rounded shadow-md">
+<h2 class="text-2xl text-center text-white font-bold mb-4">Add Ticket</h2>
+
+    <form action="handel_creat_ticket.php" method="post">
         <!-- Title -->
         <div class="mb-4">
             <label for="title" class="block text-gray-600 text-sm font-medium mb-2">Title</label>

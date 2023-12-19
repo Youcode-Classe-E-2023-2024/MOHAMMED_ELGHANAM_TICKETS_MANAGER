@@ -1,6 +1,6 @@
 
 <?php  
-
+session_start();
 include 'DATABASE.php';
 $db = new database();
 
@@ -20,7 +20,7 @@ $db = new database();
 
 
 <div class="w-screen h-16 bg-gray-800 flex justify-between items-center px-7 fixed top-0 shadow-md shadow-gray-700">
-    <img class="w-32 h-15 " src="logo-help.png" alt="">                      
+    <img class="w-32 h-13" src="https://th.bing.com/th/id/OIP.YnbscusCxdXnHWtU2iM2_gHaEK?rs=1&pid=ImgDetMain" alt="xof line dyl image wax khedam">                      
     <a href="logout.php" class="text-base font-bold text-blue-100 flex items-center">LOG OUT</a>
 </div>
 <div class="w-screen h-16 "></div>
@@ -39,8 +39,8 @@ $db = new database();
             </div>
             <div class="flex justify-center ">
                 <div>
-                    <h2 class="text-xl font-semibold dark:text-gray-300 ">John Doe</h2>
-                    <span class="text-sm font-medium text-gray-600">john@gmail.com</span>
+                    <h2 class="text-xl text-center font-semibold dark:text-gray-300 "><?php echo $_SESSION['name']; ?></h2>
+                    <span class="text-sm font-medium text-gray-600"><?php echo $_SESSION['email']; ?></span>
                 </div>
             </div>
         </div>

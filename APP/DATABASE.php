@@ -17,34 +17,34 @@ class database{
         }
     }
 
+    // function hash password
+
     public function hach_password($password)
     {
         $hach = sha1($password);
         return $hach;
     }
 
+    // function insert
+
     public function insert($sql)
-    {
-        
+    {       
         $result = mysqli_query($this->conn,$sql);
         if (!$result) {
             echo mysqli_error($this->conn);
-        }else {
-            
+        }else {         
             header("Location:login.php");
         }
     }
 
-    public function select($sql,$email,$new_password)
-    {
-        
-        $result = mysqli_query($this->conn,$sql);
-        $row = mysqli_fetch_assoc($result);
+    // function select on database
 
+    public function select($sql,$email,$new_password){    
+         $result = mysqli_query($this->conn,$sql);
+        $row = mysqli_fetch_assoc($result);
         if ($email === $row['email'] && $new_password === $row['password'] ) {
             return $row;
-        }else {
-            
+        }else {          
             echo "ERROR : " . mysqli_error($this->conn);
         }
     }
