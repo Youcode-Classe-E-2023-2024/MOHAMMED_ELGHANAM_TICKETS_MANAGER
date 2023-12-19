@@ -31,7 +31,22 @@ class database{
             echo mysqli_error($this->conn);
         }else {
             
-            echo "good insert";
+            header("Location:login.php");
+        }
+    }
+
+    public function select($sql,$email,$new_password)
+    {
+        
+        $result = mysqli_query($this->conn,$sql);
+        $row = mysqli_fetch_assoc($result);
+
+        if ($email === $row['email'] && $new_password === $row['password'] ) {
+            header("Location:dashbord.php");
+            exit;
+        }else {
+            
+            echo mysqli_error($this->conn);
         }
     }
 
