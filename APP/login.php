@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +34,7 @@
                   <div class="flex items-center justify-between">
                       <div class="flex items-start">
                           <div class="flex items-center h-5">
-                            <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
+                            <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" >
                           </div>
                           <div class="ml-3 text-sm">
                             <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
@@ -63,7 +64,7 @@
     </div>
     <div class="max-w-md mx-auto  rounded-md overflow-hidden shadow-md bg-gray-800 ">
         
-        <form class="px-6 py-4" action="./APP/register.php" method="post" enctype="multipart/form-data">
+        <form class="px-6 py-4" action="handel_register.php" method="post" enctype="multipart/form-data">
             <!-- Name Input -->
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>

@@ -1,6 +1,6 @@
 <?php
    
-    
+    session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send'])) {
     include 'DATABASE.php';
     $db = new database();
@@ -9,6 +9,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send'])) {
     $image =$_FILES['file']['tmp_name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+
+    $_SESSION['email'] = $email;
+    $_SESSION['password'] = $password;
     
     $new_password = $db->hach_password($password);
     $sql = "INSERT INTO users (name,image,email,password) VALUES('$name','$image','$email','$new_password')";

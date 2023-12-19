@@ -1,7 +1,9 @@
 
 <?php  
+
 include 'DATABASE.php';
 $db = new database();
+
 ?>
 
 <!DOCTYPE html>
@@ -19,11 +21,11 @@ $db = new database();
 
 <div class="w-screen h-16 bg-gray-800 flex justify-between items-center px-7 fixed top-0 shadow-md shadow-gray-700">
     <img class="w-32 h-15 " src="logo-help.png" alt="">                      
-    <a href="LOGOUT.php" class="text-base font-bold text-blue-100 flex items-center">LOG OUT</a>
+    <a href="logout.php" class="text-base font-bold text-blue-100 flex items-center">LOG OUT</a>
 </div>
 <div class="w-screen h-16 "></div>
 <div class="w-screen h-full flex gap-3 fixed top-16 p-3 ">
-    <!-- fixed top-16 -->
+    
     <div class="w-[30%] h-screen  rounded-lg flex flex-col justify-start gap-2  p-3">
         <div class="shadow-md shadow-gray-700 rounded-xl">
             <div class="overflow-hidden ">
@@ -113,11 +115,11 @@ $db = new database();
                         </td>
                         <td class="py-2 px-4 text-white">Admin</td>
                     </tr>
-                    <!-- Add more rows as needed -->
+                    
                 </tbody>
             </table>
             </a>
-            <!-- <div class="w-[100%] h-20  rounded-md  flex justify-between items-center px-3  shadow-sm shadow-blue-200 my-1 bg-green-600"></div> -->
+            
         </div>
     
     </div>    

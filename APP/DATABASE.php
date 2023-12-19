@@ -42,14 +42,14 @@ class database{
         $row = mysqli_fetch_assoc($result);
 
         if ($email === $row['email'] && $new_password === $row['password'] ) {
-            header("Location:dashbord.php");
-            exit;
+            return $row;
         }else {
             
-            echo mysqli_error($this->conn);
+            echo "ERROR : " . mysqli_error($this->conn);
         }
     }
 
+   
 
 }
 
