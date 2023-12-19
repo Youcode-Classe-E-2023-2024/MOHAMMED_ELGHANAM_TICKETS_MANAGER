@@ -1,20 +1,3 @@
-<?php
-    include 'DATABASE.php';
-    $db = new database();
-
-if (!empty($_POST['send'])) {
-
-    $name = $_POST['name'];
-    $image = file_get_contents($_FILES['file']['tmp_name']);
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    $new_password = $db->hach_password($password);
-    $sql = "INSERT INTO users (name,image,email,password) VALUES('$name','$image','$email','$new_password')";
-    $db->insert($sql);
-}
-    
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,19 +9,19 @@ if (!empty($_POST['send'])) {
         integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofGJopLb8r/UAZBjNQJsnqz0y4O2F5K92K" crossorigin="anonymous">
     <title>Document</title>
 </head>
-<body class="w-screen h-full flex flex-col justify-center items-center gap-2 overflow-x-hidden bg-gray-800 p-2">
+<body class="w-screen h-full flex flex-col justify-center items-center gap-2 overflow-x-hidden  p-2">
 
 
 <!--log in ------------------------------------------------------------------------------------------ -->
 <section style="display:block;"  class="bg-gray-50 dark:bg-gray-900" id="login">
-  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 gap-3">
+  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-fill lg:py-0 gap-3">
         <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white ">
             Sign in 
         </h1>
       <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
               
-                <form class="space-y-4 md:space-y-6"  method="post">
+                <form class="space-y-4 md:space-y-6" action="./APP/handel_login.php"  method="post">
                   <div>
                       <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
                       <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
@@ -67,6 +50,10 @@ if (!empty($_POST['send'])) {
       </div>
   </div>
 </section>
+
+
+
+
 <!-- register ------------------------------------------------------------------------------------------------------------------- -->
 
 
@@ -76,7 +63,7 @@ if (!empty($_POST['send'])) {
     </div>
     <div class="max-w-md mx-auto  rounded-md overflow-hidden shadow-md bg-gray-800 ">
         
-        <form class="px-6 py-4"  method="post">
+        <form class="px-6 py-4" action="./APP/register.php" method="post" enctype="multipart/form-data">
             <!-- Name Input -->
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
@@ -90,7 +77,7 @@ if (!empty($_POST['send'])) {
                 <label for="file" class="block text-gray-700 text-sm font-bold mb-2">File</label>
                 <input type="file" id="file" name="file"
                     class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                    accept=".jpg, .jpeg, .png" required>
+                     required>
             </div>
 
             <!-- Email Input -->
@@ -119,6 +106,7 @@ if (!empty($_POST['send'])) {
 </section>
 </body>
 </html>
+
 <script>
     function login() {
         console.log("HELLO");
