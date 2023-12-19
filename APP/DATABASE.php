@@ -28,11 +28,12 @@ class database{
     // function insert
 
     public function insert($sql)
-    {       
+    {     //  echo"hello <br>";
         $result = mysqli_query($this->conn,$sql);
         if (!$result) {
             echo mysqli_error($this->conn);
-        }else {         
+        }else { 
+            echo"error";        
             header("Location:login.php");
         }
     }

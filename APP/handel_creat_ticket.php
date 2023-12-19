@@ -5,15 +5,20 @@
      $db = new database();
      $title = $_POST['title'];
      $description = $_POST['description'];
-     $assign = $_POST['assign'];
-     $tag = $_POST['tag'];
-     $priority =$_p['priority'];
+     $assign = $_POST['user'];
+     if (isset($_POST['ta'])) {
+        $tag = $_POST['ta'];
+     }else {
+        echo"this empty";
+     }
+     
+     $priority =$_POST['priority'];
 
     $sql = "INSERT INTO ticket (title,description,priorite,status)
     VALUES('$title','$description','$priority','$tag')";
     $db->insert($sql);  
-     header("location:dashbord.php");
-     exit();          
+    //  header("location:dashbord.php");
+    //  exit();          
      
      
   }else{
@@ -21,4 +26,29 @@
  }
 
 
+
+
+
+
+
+
+
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
