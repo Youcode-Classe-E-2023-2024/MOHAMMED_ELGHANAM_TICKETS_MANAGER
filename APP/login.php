@@ -32,7 +32,7 @@
                   </div>
                   <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Sign in</button>
                   <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                      Don’t have an account yet? <a href="" onclick="register()" class="font-medium hover:underline text-blue-600">Sign up</a>
+                      Don’t have an account yet? <a href="#" onclick="register()" class="font-medium hover:underline text-blue-600">Sign up</a>
                   </p>
               </form>
           </div>
@@ -86,7 +86,7 @@
                 class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
                 Register
             </button>
-            <a href="" onclick="login()">ticket</a>
+            <a href="#" onclick="login()">ticket</a>
         </form>
     </div>
 </section>
@@ -97,12 +97,12 @@
         var loginElement = document.getElementById('login');
         var registerElement = document.getElementById('register');
       
-        if (loginElement && registerElement) {
+        // if (loginElement && registerElement) {
           loginElement.style.display = 'block';
           registerElement.style.display = 'none';
-        } else {
-          console.error("Elements with IDs 'login' and 'register' not found.");
-        }
+        // } else {
+        //   console.error("Elements with IDs 'login' and 'register' not found.");
+        // }
     }
       
       
@@ -111,12 +111,10 @@
         var loginElement = document.getElementById('login');
         var registerElement = document.getElementById('register');
       
-        if (loginElement && registerElement) {
+        
           loginElement.style.display = 'none';
           registerElement.style.display = 'block';
-        } else {
-          console.error("Elements with IDs 'login' and 'register' not found.");
-        }
+
     }
       
 </script>
