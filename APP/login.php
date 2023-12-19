@@ -1,7 +1,35 @@
 <?php
-    include 'header.php';
+    include 'DATABASE.php';
+    $db = new database();
+
+if (!empty($_POST['send'])) {
+
+    $name = $_POST['name'];
+    $image = file_get_contents($_FILES['file']['tmp_name']);
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $new_password = $db->hach_password($password);
+    $sql = "INSERT INTO users (name,image,email,password) VALUES('$name','$image','$email','$new_password')";
+    $db->insert($sql);
+}
+    
 ?>
-<!-- ------------------------------------------------------------------------------------------ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofGJopLb8r/UAZBjNQJsnqz0y4O2F5K92K" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body class="w-screen h-full flex flex-col justify-center items-center gap-2 overflow-x-hidden bg-gray-800 p-2">
+
+
+<!--log in ------------------------------------------------------------------------------------------ -->
 <section style="display:block;"  class="bg-gray-50 dark:bg-gray-900" id="login">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 gap-3">
         <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white ">
@@ -10,7 +38,7 @@
       <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
               
-              <form class="space-y-4 md:space-y-6" action="#">
+                <form class="space-y-4 md:space-y-6"  method="post">
                   <div>
                       <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
                       <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
@@ -30,16 +58,16 @@
                       </div>
                       <a href="#" class="text-sm font-medium text-blue-600 hover:underline ">Forgot password?</a>
                   </div>
-                  <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Sign in</button>
+                  <button type="submit" name="send" class="w-full text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Sign in</button>
                   <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                       Don’t have an account yet? <a href="#" onclick="register()" class="font-medium hover:underline text-blue-600">Sign up</a>
                   </p>
-              </form>
+                </form>
           </div>
       </div>
   </div>
 </section>
-<!-- ------------------------------------------------------------------------------------------------------------------- -->
+<!-- register ------------------------------------------------------------------------------------------------------------------- -->
 
 
 <section style="display:none;" class="bg-gray-50 dark:bg-gray-900" id="register">
@@ -48,7 +76,7 @@
     </div>
     <div class="max-w-md mx-auto  rounded-md overflow-hidden shadow-md bg-gray-800 ">
         
-        <form class="px-6 py-4" action="#" method="post">
+        <form class="px-6 py-4"  method="post">
             <!-- Name Input -->
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
@@ -82,15 +110,15 @@
             </div>
 
             <!-- Submit Button -->
-            <button type="submit"
-                class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
+            <button type="submit" name="send" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
                 Register
             </button>
-            <a href="#" onclick="login()">ticket</a>
+            <a href="#" onclick="login()" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">back</a>
         </form>
     </div>
 </section>
-
+</body>
+</html>
 <script>
     function login() {
         console.log("HELLO");
