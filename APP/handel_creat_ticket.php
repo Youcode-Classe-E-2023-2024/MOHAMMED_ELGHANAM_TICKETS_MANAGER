@@ -5,13 +5,13 @@
      $db = new database();
      $title = $_POST['title'];
      $description = $_POST['description'];
-     
-     $sql = "SELECT * FROM users WHERE email='$email'";
-     $user = $db->select($sql,$email,$new_password);
-     
-     $_SESSION['name'] = $user['name'];
-     $_SESSION['email'] = $user['email'];
-     // var_dump($_SESSION['email']);
+     $assign = $_POST['assign'];
+     $tag = $_POST['tag'];
+     $priority =$_p['priority'];
+
+    $sql = "INSERT INTO ticket (title,description,priorite,status)
+    VALUES('$title','$description','$priority','$tag')";
+    $db->insert($sql);  
      header("location:dashbord.php");
      exit();          
      
