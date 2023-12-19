@@ -4,6 +4,9 @@ session_start();
 include 'DATABASE.php';
 $db = new database();
 
+$sql = "SELECT * FROM ticket";
+$row = $db->select_tiket($sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -70,51 +73,28 @@ $db = new database();
             <table class="min-w-full bg-gray-800  border-gray-300 rounded-xl shadow-lg shadow-gray-700">
                 <thead>
                     <tr>
-                        <th class="py-2 px-4 border-b border-gray-500 text-gray-400">Name</th>
+                        <th class="py-2 px-4 border-b border-gray-500 text-gray-400">TITLE</th>
                         <th class="py-2 px-4 border-b border-gray-500 text-gray-400">DESCRIPTION</th>
                         <th class="py-2 px-4 border-b border-gray-500 text-gray-400">PRIORETY</th>
+                        <th class="py-2 px-4 border-b border-gray-500 text-gray-400">STATUS</th>
                         <th class="py-2 px-4 border-b border-gray-500 text-gray-400">TAG</th>
                         <th class="py-2 px-4 border-b border-gray-500 text-gray-400">ASSIGNEMENT</th>
-                        <th class="py-2 px-4 border-b border-gray-500 text-gray-400">STATUS</th>
                         <th class="py-2 px-4 border-b border-gray-500 text-gray-400">DATE</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="py-2 px-4 border-b border-gray-500 text-white">1</td>
-                        <td class="py-2 px-4 border-b border-gray-500 text-white">John Doe</td>
-                        <td class="py-2 px-4 border-b border-gray-500 text-white">1</td>
-                        <td class="py-2 px-4 border-b border-gray-500 text-white">John Doe</td>
-                        <td class="py-2 px-4 border-b border-gray-500 text-white flex gap-1">
-                            <img src="https://i.postimg.cc/RhQYkKYk/pexels-italo-melo-2379005.jpg" alt="" class=" w-8 h-8 rounded-full">
-                            <p>hello</p>
-                        </td>
-                        <td class="py-2 px-4 border-b border-gray-500 text-white">
-                            
-                        <select id="tag" name="user" class=" w-24 h-6 px-3 py-2 border rounded-md shadow-md shadow-gray-700">
-                            <option value="" disabled selected>Select Status</option>
-                            <option class=" text-black" value="doing">doing</option>
-                            <option class=" text-black" value="done">done</option>
-                        </select>
-                        
-                        </td>
-                        <td class="py-2 px-4 border-b border-gray-500 text-white">Admin</td>
+                        <?php foreach ($row as $key): ?>
+                            <td class="py-2 px-4 border-b border-gray-500 text-white"><?php echo $key['title']; ?></td>
+                            <td class="py-2 px-4 border-b border-gray-500 text-white"><?php echo $key['description']; ?></td>
+                            <td class="py-2 px-4 border-b border-gray-500 text-white"><?php echo $key['priorite']; ?></td>
+                            <td class="py-2 px-4 border-b border-gray-500 text-white"><?php echo $key['status']; ?></td>
+                            <td class="py-2 px-4 border-b border-gray-500 text-white flex gap-1">hello</td>
+                            <td class="py-2 px-4 border-b border-gray-500 text-white">done</td>
+                            <td class="py-2 px-4 border-b border-gray-500 text-white">Admin</td>
+                        <?php endforeach; ?>
                     </tr>
-                    <tr>
-                        <td class="py-2 px-4 text-white">2</td>
-                        <td class="py-2 px-4 text-white">Jane Doe</td>
-                        <td class="py-2 px-4 text-white">1</td>
-                        <td class="py-2 px-4 text-white">John Doe</td>
-                        <td class="py-2 px-4 text-white">jane@example.com</td>
-                        <td class="py-2 px-4 text-white">
-                        <select id="tag" name="user" class=" w-24 h-6 px-3 py-2 border rounded-md shadow-md shadow-gray-700">
-                            <option value="" disabled selected>Select Status</option>
-                            <option class=" text-black" value="doing">doing</option>
-                            <option class=" text-black" value="done">done</option>
-                        </select>
-                        </td>
-                        <td class="py-2 px-4 text-white">Admin</td>
-                    </tr>
+                   
                     
                 </tbody>
             </table>

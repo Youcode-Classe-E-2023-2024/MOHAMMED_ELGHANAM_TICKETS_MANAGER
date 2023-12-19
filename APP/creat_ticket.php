@@ -1,6 +1,16 @@
 <?php  
 include 'DATABASE.php';
 $db = new database();
+
+$sql = "SELECT name FROM users";
+$row = $db->select1($sql);
+// echo "<pre>";
+// print_r($row);
+// echo "<pre>";
+
+// foreach ($row as $key) {
+//     echo $key['name'] . "<br>";
+// }
 ?>
 
 <!DOCTYPE html>
@@ -21,30 +31,31 @@ $db = new database();
 <h2 class="text-2xl text-center text-white font-bold mb-4">Add Ticket</h2>
 
     <form action="handel_creat_ticket.php" method="post">
-        <!-- Title -->
+        
         <div class="mb-4">
             <label for="title" class="block text-gray-600 text-sm font-medium mb-2">Title</label>
             <input type="text" id="title" placeholder="enter title"  name="title" class="w-full px-3 py-2 border rounded-md bg-gray-700" required>
         </div>
 
-        <!-- Description -->
+        
         <div class="mb-4">
             <label for="description" class="block text-gray-600 text-sm font-medium mb-2">Description</label>
             <textarea id="description" placeholder="enter description" name="description" rows="4" class="w-full px-3 py-2 border rounded-md bg-gray-700" required></textarea>
         </div>
 
-        <!-- User Selection -->
+        
         <div class="mb-4">
             <label for="user" class="block text-gray-600 text-sm font-medium mb-2">Assign to</label>
             <select id="user" name="user" class="w-full px-3 py-2 border rounded-md text-gray-400 bg-gray-700">
                 <option value="" disabled selected>Select User</option>
-                <option value="user1">User 1</option>
-                <option value="user2">User 2</option>
-                <option value="user3">User 3</option>
+                <?php foreach ($row as $key): ?>
+                <option value="<?php echo $key['name']; ?>"><?php echo $key['name']; ?></option>
+                <?php endforeach; ?>
+                
             </select>
         </div>
 
-        <!-- Tag -->
+        
         <div class="mb-4">
             <label for="tag" class="block text-gray-600 text-sm font-medium mb-2">Tag</label>
             <select id="tag" name="ta" class="w-full px-3 py-2 border rounded-md text-gray-400 bg-gray-700">
@@ -55,7 +66,7 @@ $db = new database();
             </select>
         </div>
 
-        <!-- Priority -->
+        
         <div class="mb-4">
             <label for="priority" class="block text-gray-600 text-sm font-medium mb-2">Priority</label>
             <select id="priority" name="priority" class="w-full px-3 py-2 border rounded-md text-gray-400 bg-gray-700">

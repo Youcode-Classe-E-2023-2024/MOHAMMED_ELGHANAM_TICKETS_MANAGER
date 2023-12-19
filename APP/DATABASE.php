@@ -49,8 +49,28 @@ class database{
             echo "ERROR : " . mysqli_error($this->conn);
         }
     }
-
+    // function select users on database
+    public function select1($sql){    
+        $result = mysqli_query($this->conn,$sql);
+        $data = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $data[] = $row;
+        }
+       
+       return $data;
+    }
+    // function select tiket on database
    
+    public function select_tiket($sql){
+        $result = mysqli_query($this->conn,$sql);
+        $data = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $data[] = $row;
+        }
+       
+       return $data;
+
+    }
 
 }
 
