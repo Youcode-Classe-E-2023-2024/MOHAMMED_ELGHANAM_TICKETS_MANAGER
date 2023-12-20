@@ -7,10 +7,11 @@
      $description = $_POST['description'];
      $assign = $_POST['user'];
     //  print_r($assign);
-     if (isset($_POST['ta'])) {
-        $tag = $_POST['ta'];
+     if (isset($_POST['tag'])) {
+        $tag = $_POST['tag'];
      }else {
         echo"this empty";
+        exit(); 
      }
      
      $priority =$_POST['priority'];

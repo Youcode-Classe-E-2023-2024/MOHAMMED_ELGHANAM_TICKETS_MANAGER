@@ -54,6 +54,9 @@ $row = $db->select_tiket($sql);
             <a href="creat_ticket.php" class="bg-sky-900 hover:bg-sky-950 rounded-lg flex justify-center items-center w-36 h-10 text-white shadow-md shadow-gray-700 ">
                 creat ticket
             </a> 
+            <a href="details_ticket.php" class="bg-sky-900 hover:bg-sky-950 rounded-lg flex justify-center items-center w-36 h-10 text-white shadow-md shadow-gray-700 ">
+                SHOW DETAILS
+            </a> 
             <div class=" w-2/5 h-fit flex gap-2">
                 <select id="tag" name="user" class=" w-1/2 px-3 py-2 border rounded-md mt-1 shadow-md shadow-gray-700">
                     <option value="" disabled selected>Select Status</option>
@@ -69,36 +72,34 @@ $row = $db->select_tiket($sql);
         </div>
         
         <div class="w-[100%] h-[77%] py-3 overflow-auto">
-            <a href="details_ticket.php">
+            
             <table class="min-w-full bg-gray-800  border-gray-300 rounded-xl shadow-lg shadow-gray-700">
                 <thead>
                     <tr>
                         <th class="py-2 px-4 border-b border-gray-500 text-gray-400">TITLE</th>
                         <th class="py-2 px-4 border-b border-gray-500 text-gray-400">DESCRIPTION</th>
                         <th class="py-2 px-4 border-b border-gray-500 text-gray-400">PRIORETY</th>
-                        <th class="py-2 px-4 border-b border-gray-500 text-gray-400">STATUS</th>
                         <th class="py-2 px-4 border-b border-gray-500 text-gray-400">TAG</th>
-                        <th class="py-2 px-4 border-b border-gray-500 text-gray-400">ASSIGNEMENT</th>
-                        <th class="py-2 px-4 border-b border-gray-500 text-gray-400">DATE</th>
+                       
                     </tr>
                 </thead>
+                
                 <tbody>
+                <?php foreach ($row as $key): ?>
                     <tr>
-                        <?php foreach ($row as $key): ?>
-                            <td class="py-2 px-4 border-b border-gray-500 text-white"><?php echo $key['title']; ?></td>
-                            <td class="py-2 px-4 border-b border-gray-500 text-white"><?php echo $key['description']; ?></td>
-                            <td class="py-2 px-4 border-b border-gray-500 text-white"><?php echo $key['priorite']; ?></td>
-                            <td class="py-2 px-4 border-b border-gray-500 text-white"><?php echo $key['status']; ?></td>
-                            <td class="py-2 px-4 border-b border-gray-500 text-white flex gap-1">hello</td>
-                            <td class="py-2 px-4 border-b border-gray-500 text-white">done</td>
-                            <td class="py-2 px-4 border-b border-gray-500 text-white">Admin</td>
-                        <?php endforeach; ?>
-                    </tr>
-                   
-                    
+                        
+                        <td class="py-2 px-4 border-b border-gray-500 text-white"><?php echo $key['title']; ?></td>
+                        <td class="py-2 px-4 border-b border-gray-500 text-white"><?php echo $key['description']; ?></td>
+                        <td class="py-2 px-4 border-b border-gray-500 text-white"><?php echo $key['priorite']; ?></td>
+                        <td class="py-2 px-4 border-b border-gray-500 text-white"><?php echo $key['status']; ?></td>
+                            
+                        
+                    </tr>  
+                <?php endforeach; ?>   
                 </tbody>
+                
             </table>
-            </a>
+            
             
         </div>
     

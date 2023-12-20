@@ -46,7 +46,7 @@ class database{
         if ($email === $row['email'] && $new_password === $row['password'] ) {
             return $row;
         }else {          
-            echo "ERROR : " . mysqli_error($this->conn);
+            echo "ERROR dd: " . mysqli_error($this->conn);
         }
     }
     // function select users on database

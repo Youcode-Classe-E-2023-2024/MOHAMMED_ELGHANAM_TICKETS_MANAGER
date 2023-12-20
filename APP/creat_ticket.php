@@ -58,7 +58,7 @@ $row = $db->select1($sql);
         
         <div class="mb-4">
             <label for="tag" class="block text-gray-600 text-sm font-medium mb-2">Tag</label>
-            <select id="tag" name="ta" class="w-full px-3 py-2 border rounded-md text-gray-400 bg-gray-700">
+            <select id="tag" name="tag" class="w-full px-3 py-2 border rounded-md text-gray-400 bg-gray-700">
                 <option value="" disabled selected>Select Tag</option>
                 <option value="bug">bug</option>
                 <option value="question">question</option>
