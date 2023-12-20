@@ -219,7 +219,31 @@ $developers = $connection->selectData("developpeur", "First_name, Last_name", ""
                 </div>
             </div>
 
-            
+            <div class="py-6 border-b border-gray-100 dark:border-gray-800">
+                <div class="w-full md:w-9/12">
+                    <div class="flex flex-wrap -m-3">
+
+                        <div class="w-full p-3 md:w-1/3">
+
+                            <label class="text-lg font-mono text-gray-700 dark:text-gray-400">
+                                developpeur
+                            </label>
+                        </div>
+
+                        <div class="w-full p-3 md:flex-1">
+
+                            <select name="dev[]" id="dev" multiple>
+                                <?php foreach ($developers as $developer): ?>
+                                <option value="<?= $developer['First_name'] . ' ' . $developer['Last_name']; ?>">
+                                    <?= $developer['First_name'] . ' ' . $developer['Last_name']; ?>
+                                </option>
+
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="py-6 border-b border-gray-100 dark:border-gray-800">
                 <div class="w-full md:w-9/12">
